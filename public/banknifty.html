@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Nifty Live Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100">
+
+  <!-- Navbar -->
+  <nav class="bg-white shadow sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+      <div class="flex items-center space-x-2">
+        <img src="https://cdn-icons-png.flaticon.com/512/2809/2809191.png" alt="Logo" class="h-8 w-8">
+        <h1 class="text-xl font-bold text-gray-800">NSE Live Dashboard</h1>
+      </div>
+      <button onclick="window.location.href='nifty.html'" class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700">
+        View Nifty
+      </button>
+      <button onclick="window.location.href='index.html'" class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700">
+        Home
+      </button>
+    </div>
+  </nav>
+
+  <!-- KPI Cards -->
+  <main class="max-w-7xl mx-auto px-4 py-6">
+    <section id="kpi-cards" class="grid grid-cols-1 md:grid-cols-4 gap-4">
+      <div class="bg-white p-6 rounded shadow text-center">
+        <h3 class="text-gray-500 font-semibold">Live Price</h3>
+        <p id="live-price" class="text-2xl font-bold text-blue-600">--</p>
+      </div>
+      <div class="bg-white p-6 rounded shadow text-center">
+        <h3 class="text-gray-500 font-semibold">Previous Close</h3>
+        <p id="previous-close" class="text-2xl font-bold text-gray-700">--</p>
+      </div>
+      <div class="bg-white p-6 rounded shadow text-center">
+        <h3 class="text-gray-500 font-semibold">Movement</h3>
+        <p id="movement" class="text-2xl font-bold text-green-600">--</p>
+      </div>
+      <div class="bg-white p-6 rounded shadow text-center">
+        <h3 class="text-gray-500 font-semibold">% Change</h3>
+        <p id="percent-change" class="text-2xl font-bold text-purple-600">--</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+  <script>
+    fetchKPIData('BANKNIFTY');
+  </script>
+
+</body>
+
+</html>
